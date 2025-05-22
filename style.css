@@ -6,78 +6,122 @@
   font-weight: normal;
   font-style: normal;
 }
-/* افتراضياً للمتصفحات الكبيرة (سطح المكتب) */
-body {
-  font-family: 'YearOfTheCamelLight', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(135deg, #000000, #6a0dad, #00a8e8);
-  color: #e0e0e0;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-/* الأنماط الخاصة بالهواتف المحمولة */
-@media (max-width: 768px) {
-  /* تحسين المساحات والأبعاد للهواتف */
+/* شاشات حتى 768px */
+@media screen and (max-width: 768px) {
   body {
-    padding: 10px; /* إضافة بعض الفراغات حول المحتوى */
+    background: linear-gradient(135deg, #000000, #5a0cad, #0098d8);
+  }
+
+  body.dark-mode {
+    background: linear-gradient(135deg, #000000, #180033, #004466);
+  }
+
+  section {
+    padding: 20px 15px;
+    margin: 10px 5px;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #1a1a1a, #2a003f, #003e5c);
+  }
+
+  body.dark-mode section {
+    background: linear-gradient(145deg, #121212, #23002c, #00364d);
   }
 
   .gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* عرض صورين في كل صف على الهواتف */
-    gap: 16px;
-    padding: 0;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 
   .gallery img {
-    width: 100%; /* عرض الصورة بشكل كامل في المساحة المتاحة */
-    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
-  }
-
-  /* تحسين النصوص */
-  .gallery figcaption {
-    font-size: 16px; /* حجم النص على الهواتف */
-  }
-
-  header {
-    padding: 20px 10px; /* تقليل المسافات في الترويسة */
+    height: 180px;
   }
 
   nav ul {
-    flex-direction: column; /* تحويل شريط التنقل إلى عمودي */
+    flex-direction: column;
+    align-items: center;
     gap: 10px;
   }
 
   nav ul li a {
-    font-size: 18px; /* تقليل حجم النصوص في شريط التنقل */
+    font-size: 18px;
+    padding: 10px;
   }
-  
-  /* جعل بعض الأزرار أكبر وتتناسب مع الهواتف */
+
+  .intro h1 {
+    font-size: 32px;
+  }
+
+  header {
+    padding: 30px 15px;
+    background: linear-gradient(to right, #000000, #5a0cad, #0098d8);
+  }
+
+  body.dark-mode header,
+  body.dark-mode nav,
+  body.dark-mode footer {
+    background: linear-gradient(to right, #000000, #2b0057, #007799);
+  }
+
   #toggleDarkMode {
-    padding: 10px 20px;
+    top: 8px;
+    left: 8px;
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .gallery figcaption {
     font-size: 16px;
   }
 }
 
-@media (max-width: 480px) {
-  /* تحسين العرض على الهواتف الصغيرة جداً */
-  .gallery {
-    grid-template-columns: 1fr; /* صورة واحدة في كل صف */
+/* شاشات حتى 480px */
+@media screen and (max-width: 480px) {
+  body {
+    background: linear-gradient(135deg, #000000, #4a0c9c, #0088c8);
   }
 
-  header {
-    font-size: 22px; /* تقليل حجم النصوص في الترويسة */
+  body.dark-mode {
+    background: linear-gradient(135deg, #000000, #14002b, #003a55);
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery img {
+    height: 200px;
   }
 
   nav ul li a {
-    font-size: 16px; /* تقليل حجم النصوص في شريط التنقل */
+    font-size: 16px;
+    padding: 8px;
   }
 
-  #toggleDarkMode {
-    font-size: 14px; /* تقليل حجم النص في زر الوضع الليلي */
+  .intro h1 {
+    font-size: 24px;
+  }
+
+  .gallery figcaption {
+    font-size: 14px;
   }
 }
+/* في الشاشات حتى 768px */
+@media screen and (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* في الشاشات حتى 480px */
+@media screen and (max-width: 480px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+
+
 
 
 /* الخط العام */
